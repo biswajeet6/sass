@@ -12,17 +12,26 @@ const nextConfig = {
         destination: '/api/auth/register',
         permanent: true,
       },
-    ]
+    ];
   },
 
   webpack: (
     config,
     { buildId, dev, isServer, defaultLoaders, webpack }
   ) => {
-    config.resolve.alias.canvas = false
-    config.resolve.alias.encoding = false
-    return config
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
+    return config;
   },
-}
 
-module.exports = nextConfig
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
+
+  generateViewport: {
+    themeColor: '#ffffff', // Replace with your actual theme color
+    // Add other viewport configurations if needed
+  },
+};
+
+module.exports = nextConfig;
